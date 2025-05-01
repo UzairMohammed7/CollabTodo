@@ -106,7 +106,7 @@ export const useAuthStore = create((set) => ({
 
   logout: async () => {
     try {
-      await axiosInstance.post("/api/users/logout");
+      await axiosInstance.post(`${API_URL}/api/users/logout`);
     } catch (error) {
       set({ error: error.response?.data || { message: "Logout failed" } });
     } finally {
@@ -118,7 +118,7 @@ export const useAuthStore = create((set) => ({
   checkAuth: async () => {
     set({ isCheckingAuth: true, error: null });
     try {
-      const response = await axiosInstance.get("/api/users/check-auth");
+      const response = await axiosInstance.get(`${API_URL}/api/users/check-auth`);
       localStorage.setItem("user", JSON.stringify(response.data.user));
       set({
         user: response.data.user,
