@@ -7,11 +7,7 @@ const UserSchema = new mongoose.Schema({
           /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
           "Please enter a valid email address",
         ], },
-    password: { type: String, required: true, minlength: [6, "Password must be at least 6 characters"],
-        match: [
-          /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{6,}$/,
-          "Password must be at least 6 characters long and include at least one letter and one number",
-        ], },
+    password: { type: String, required: true, minlength: [6, "Password must be at least 6 characters"]},
     soketId:{ type: String }
 });
 
