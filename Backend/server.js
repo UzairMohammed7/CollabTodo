@@ -20,7 +20,7 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
     cors:
-     { origin: "*" || `${process.env.FRONTEND_URL}`,
+     { origin: "https://collaborative-todos.vercel.app",
        methods: ["GET", "POST", 'PUT', "DELETE"],
        credentials: true,
      }
@@ -28,7 +28,7 @@ const io = socketIo(server, {
 
 // Middleware
 app.use(cors({
-    origin: "*" || `${process.env.FRONTEND_URL}`,
+    origin: "https://collaborative-todos.vercel.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }));
