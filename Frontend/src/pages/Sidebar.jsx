@@ -112,6 +112,34 @@ const Sidebar = ({
           </svg>
           <span className="font-medium text-sm">Logout</span>
         </button>
+
+                <button
+          onClick={() => {
+            const confirmed = window.confirm(
+              "Are you sure you want to permanently delete your account? This action cannot be undone."
+            );
+            if (confirmed) {
+              handleDeleteAccount();
+            }
+          }}
+          className="w-full mt-3 flex items-center justify-center gap-2 bg-gray-200 hover:bg-red-100 text-red-600 py-2 px-4 rounded-xl shadow-md transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-4 w-4"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7m6 0V4m-2 0h4"
+            />
+          </svg>
+          <span className="font-medium text-sm">Delete Account</span>
+        </button>
       </div>
     </aside>
   );
