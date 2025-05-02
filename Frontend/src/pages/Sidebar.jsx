@@ -120,6 +120,7 @@ const Sidebar = ({
             );
             if (confirmed) {
               handleDeleteAccount();
+              handleLogout();
             }
           }}
           className="w-full mt-3 flex items-center justify-center gap-2 bg-gray-200 hover:bg-red-100 text-red-600 py-2 px-4 rounded-xl shadow-md transition"
