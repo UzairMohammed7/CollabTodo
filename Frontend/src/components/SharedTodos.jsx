@@ -96,7 +96,7 @@ const SharedTodos = ({
                 <div className="flex">
                   <input
                     type="text"
-                    placeholder="Add comment"
+                    placeholder="Add Message"
                     value={comments[task._id] || ""}
                     onChange={(e) =>
                       setComments((prev) => ({
@@ -132,7 +132,7 @@ const SharedTodos = ({
                           onClick={() => handleDeleteComment(comment._id)}
                           className="bg-transparent hover:bg-red-200 text-red-500 px-2 py-1 rounded text-xs border-2"
                         >
-                          Delete Comment
+                          Delete
                         </button>
                       )}
                     </li>
