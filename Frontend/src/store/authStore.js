@@ -78,6 +78,19 @@ export const useAuthStore = create((set) => ({
       });
     }
   },
+
+  deleteAccount: async () => {
+    try {
+      await axiosInstance.delete(`${API_URL}/api/users/delete`);
+      localStorage.removeItem("token");
+      localStorage.removeItem("user");
+      set({ user: null, isAuthenticated: false, error: null });
+    } catch (error) {
+      set({ error: error.response?.data || { message: "Account deletion failed" } });
+      throw error;
+    }
+  },
+
 }));
 
 
