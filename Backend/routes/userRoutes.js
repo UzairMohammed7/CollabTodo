@@ -6,7 +6,8 @@ const {
   logoutUser,
   checkAuth,
   generateInviteLink,
-  validateInvite
+  validateInvite,
+  deleteUser
 } = require("../controllers/userController");
 const { verifyToken } = require("../middleware/verifyToken");
 
@@ -16,6 +17,7 @@ const router = express.Router();
 router.get("/check-auth", verifyToken, checkAuth);
 router.post("/logout",verifyToken, logoutUser);
 router.get("/invite-link", verifyToken, generateInviteLink);
+router.delete('/delete', verifyToken, deleteUser);
 
 // public routes
 router.post("/register", registerUser);
